@@ -1,0 +1,490 @@
+ /* Estilos generales */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+button {
+    max-width: 100%; /* Que nunca excedan el contenedor */
+    width: auto; /* Permitir que se ajusten automáticamente */
+    font-size: 1rem; /* Escalar el texto con proporción */
+    padding: 0.5em 1em; /* Espaciado interno dinámico */
+    box-sizing: border-box; /* Incluir borde en el cálculo de ancho */
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    align-items: center;  /* Alinea verticalmente el logo y el texto */
+    position: relative;
+    flex-direction: column; /* Cambiar a columna para que los elementos se apilen */
+    position: relative;
+    height: 100px; /* Ajusta la altura según sea necesario */
+    max-height: 130px;
+}
+
+header h1 {
+    font-size: 45px;
+    margin: 0; /* Elimina el margen por defecto del h1 */
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 0px; /*centra el texto del titulo*/
+}
+
+header img.logo {
+    width: 210px;
+    max-width: 250px; /* Ajusta el tamaño máximo */
+    height: 117px;
+    max-height: 250px;
+    position: absolute; /* Para colocarlo en una posición fija */
+    top: 0px; /* Margen superior */
+    right: 1px; /* Alineado a la derecha */
+    border: 6px solid #215bad;
+    
+}
+
+header .header-buttons {
+    display: flex;
+    gap: 5px;  /* Espacio entre los botones */
+    position: absolute;  /* Posiciona los botones sobre el header */
+    bottom: 10px;
+    flex-wrap: wrap; /* Permitir que los botones se ajusten en varias filas */
+    justify-content: flex-start; /* Distribuir el espacio entre botones */
+    margin-top: auto;
+}
+
+/* Estilo para los botones */
+header .header-buttons button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0px;
+}
+
+header .header-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/*Contenedor y botones debajo del header*/
+
+/* Nuevo contenedor de botones (debajo del header) */
+.header-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 20px 0;
+    background-color: #333;
+    margin-top: 30px;
+    border-top: 2px solid #fff;
+}
+
+.header-button-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.header-button-container button:hover {
+    background-color: #0056b3;
+}
+/* Contenedor principal que envuelve .container y .sidebar */
+.main-container {
+    display: flex;
+    gap: 20px; /* Espacio entre el contenedor de productos y el sidebar */
+    margin-top: 10px;
+    padding: 20px;
+    align-items: stretch;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #cbcdd6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+@keyframes brillo {
+    0% { box-shadow: 0 0 5px #497baf; }
+    50% { box-shadow: 0 0 20px #2578d1; }
+    100% { box-shadow: 0 0 5px #0675ec; }
+}
+
+.container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    animation: brillo 2s infinite; /* Repite infinitamente */
+}
+
+/* El nuevo contenedor al lado (sidebar) */
+.sidebar {
+    flex-shrink: 0; /* Evita que este contenedor se encoja */
+    width: 300px; /* Ancho fijo para el sidebar */
+    background-color: #cbcdd6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Control de altura */
+    height: 700px; /* La altura crecerá dependiendo del contenido */
+    max-height: 100%; /* La altura máxima será el contenedor padre */
+    overflow-y: auto; /* Si el contenido excede la altura máxima, agrega un scroll vertical */
+    
+}
+
+
+/* Estilos adicionales para el sidebar */
+.sidebar h1 {
+    font-size: 30px;
+    margin-bottom: 2px;
+    color: #007BFF;
+   
+}
+
+.sidebar p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sidebar-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sidebar-button-container button {
+    background-color: #ff6737;
+    color: white;
+    border: none;
+    padding: 12px 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font: poppins;
+    display: flex;
+    justify-content: center;
+    max-width: 25px;
+}
+
+.sidebar-button-container button:hover {
+    background-color: #ff3816;
+}
+
+.catalog-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color:#0056b3;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    border: 1px solid #ddd;
+    padding: 22px;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 20px;
+    height: 255px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: poppins;
+    
+    
+}
+
+.item img {
+    height: 120px;
+    width: 120px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.item button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.item button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Contenedor izquierdo del footer con color distinto */
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1.05); /* Tamaño más grande */
+    }
+}
+.footer-left {
+    width: 40%;  /* Ajusta el tamaño según sea necesario */
+    background-color: #f5f3f3; /* Color diferente */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 50px;
+    max-height: 80px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    animation: pulse 2.5s infinite; /* Aplica la animación */
+}
+
+.footer-left img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor */
+    height: 100%; /* Ajusta la imagen al alto del contenedor */
+    object-fit: cover; /* Recorta la imagen para que llene todo el espacio */
+    display: block; /* Elimina espacios extra alrededor de la imagen */
+    border-radius: 8px;
+}
+/* Contenedor derecho del footer para los botones */
+.footer-right {
+    display: flex;
+    justify-content: flex-end;  /* Alinea los botones hacia la derecha */
+    width: 50%;  /* Ajusta el tamaño según sea necesario */
+    align-items: center;
+}
+
+/* Contenedor de botones en el footer */
+.footer-button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;  /* Alinea los botones horizontalmente al centro */
+    align-items: flex-end;  /* Alinea los botones a la derecha */
+    margin-right: 40px; /* Ajusta este valor para mover el grupo hacia la izquierda */
+}
+
+
+/*Botones del Pie de pagina (Footer) */
+
+.footer-button-container button1 {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    flex: 1 1 auto;        /* Los botones se ajustan automáticamente */
+    min-width: 70px;      /* Ancho mínimo para que no sean demasiado pequeños */
+    max-width: 90px;      /* Ancho máximo para limitar su expansión */
+}
+    
+
+.footer-button-container button1:hover {
+    background-color: #0056b3;
+}
+
+.footer-button-container button2 {
+    background-color: #8db1d4;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    flex: 1 1 auto;        /* Los botones se ajustan automáticamente */
+    min-width: 70px;      /* Ancho mínimo para que no sean demasiado pequeños */
+    max-width: 90px;      /* Ancho máximo para limitar su expansión */
+}
+   
+
+
+.footer-button-container button2:hover {
+    background-color: #7f8fa0;
+}
+
+.footer-button-container button3 {
+    background-color: #4a91d8;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    flex: 1 1 auto;        /* Los botones se ajustan automáticamente */
+    min-width: 70px;      /* Ancho mínimo para que no sean demasiado pequeños */
+    max-width: 90px;      /* Ancho máximo para limitar su expansión */
+}
+    
+
+.footer-button-container button3:hover {
+    background-color: #658bb4;
+}
+
+.footer-button-container button4 {
+    background-color: #2adb57;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    flex: 1 1 auto;        /* Los botones se ajustan automáticamente */
+    min-width: 70px;      /* Ancho mínimo para que no sean demasiado pequeños */
+    max-width: 90px;      /* Ancho máximo para limitar su expansión */
+}
+    
+
+.footer-button-container button4:hover {
+    background-color: #4d8f61;
+}
+
+
+.footer-button-container button5 {
+    background-color: #d63d17;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    min-width: 70px;      /* Ancho mínimo para que no sean demasiado pequeños */
+    max-width: 90px;      /* Ancho máximo para limitar su expansión */
+}
+    
+
+.footer-button-container button5:hover {
+    background-color: #b13128;
+}
+
+
+footer p {
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    justify-content: center;
+    
+}
+
+/*Estilo de los botones dentro del sidebear */
+.video-container {
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor padre */
+    margin-bottom: 20px; /* Espaciado entre los videos */
+    aspect-ratio: 16/9; /* Relación de aspecto estándar para videos */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    border-radius: 8px; /* Opcional: redondear bordes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Opcional: sombra alrededor del video */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Elimina el borde del iframe */
+}
+
+
+/* Media para las pantallas*/
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    header h1 {
+        font-size: 24px;
+    }
+    header img.logo {
+        width: 120px;
+    }
+}
+
+
+@media (max-width: 768px) {
+     .footer-button-container {
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: center; /* Centra los botones */
+        margin-right: 70px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Mostrar un producto por fila */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; /* Permite que los elementos se apilen */
+        justify-content: center; /* Centra todo */
+    }
+
+    header .header-buttons {
+        order: -1; /* Coloca los botones primero */
+        display: flex;
+        justify-content: center; /* Alinea a la izquierda */
+       
+    }
+
+    }
+
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    header img.logo {
+        width: 150px; /* Tamaño menor para tablets */
+        top: 2px; /* Ajustar posición */
+        right: 2px; /* Menor separación */
+    }
+}
+
+@media (max-width: 480px) {
+    header img.logo {
+        width: 100px; /* Tamaño aún menor para móviles */
+        top: 5px;
+        right: 3px;
+    }
+}
